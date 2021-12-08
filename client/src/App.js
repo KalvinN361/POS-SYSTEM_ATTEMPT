@@ -10,16 +10,19 @@
 // import Drinks from "./pages/Drinks.js";
 // // import Auth from './utils/auth'
 import { setContext } from '@apollo/client/link/context';
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+//import React from 'react';
+//import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from "@apollo/client";
-import Login from "./pages/Login";
 import Navtabs from "./components/Navtabs";
 import Entrees from "./pages/Entrees";
 // import Sides from "./pages/Sides";
 import Desserts from "./pages/Desserts";
 import Drinks from "./pages/Drinks.js";
 import {ThemeProvider, createTheme} from '@mui/material/styles'
+import React, { useState } from 'react';
+import Login from './pages/Login';
+import useToken from './components/Login/useToken';
 
 
 const httpLink = createHttpLink({
@@ -60,7 +63,24 @@ const theme = createTheme (theme => ({
   },
 }));
 
+function setToken(userToken) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken() {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
+
 function App() {
+  const { token, setToken } = useToken();
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
+
   return (
     <ThemeProvider theme = {theme}>
         <ApolloProvider client={client}>
