@@ -278,7 +278,7 @@ export default function menuItem() {
           </CardActions>
         </Card>
       </Grid>
-      <Grid item xs={12} sm={6} md={4}>
+      {/* <Grid item xs={12} sm={6} md={4}>
         <Card xl={{ Width: 300 }}>
           <CardContent>
             <Box display="flex" justifyContent="space-between">
@@ -313,7 +313,7 @@ export default function menuItem() {
             <Typography>Price:${menu[2].price}</Typography>
           </CardActions>
         </Card>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }
