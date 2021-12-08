@@ -25,6 +25,7 @@ const Img = styled("img")({
   maxWidth: "200px",
   minHeight: "250px",
   objectFit: "cover",
+  maxHeight: "250px"
 });
 const menu = [
   {
@@ -100,7 +101,7 @@ export default function menuItem() {
       <Grid item xs={12} sm={6} md={4}>
         <Card xl={{ Width: 300 }}>
           <CardContent>
-            <Box display="flex" justifyContent="space-between">
+            <Box display="flex" justifyContent="space-around">
               <Img alt="whataTaco" src={whataTaco} />
             </Box>
           </CardContent>
@@ -115,7 +116,7 @@ export default function menuItem() {
       <Grid item xs={12} sm={6} md={4}>
         <Card xl={{ Width: 300 }}>
           <CardContent>
-            <Box display="flex" justifyContent="space-between">
+            <Box display="flex" justifyContent="space-around">
               <Img alt="pho1" src={bunBo} />
             </Box>
           </CardContent>
@@ -130,7 +131,7 @@ export default function menuItem() {
       <Grid item xs={12} sm={6} md={4}>
         <Card xl={{ Width: 300 }}>
           <CardContent>
-            <Box display="flex" justifyContent="space-between">
+            <Box display="flex" justifyContent="space-around">
               <Img alt="pho2" src={phoThai} />
             </Box>
           </CardContent>
@@ -145,7 +146,7 @@ export default function menuItem() {
       <Grid item xs={12} sm={6} md={4}>
         <Card xl={{ Width: 300 }}>
           <CardContent>
-            <Box display="flex" justifyContent="space-between">
+            <Box display="flex" justifyContent="space-around">
               <Img alt="pho3" src={oxtailPho} />
             </Box>
           </CardContent>
