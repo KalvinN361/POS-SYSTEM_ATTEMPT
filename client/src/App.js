@@ -20,7 +20,7 @@ import Desserts from "./pages/Desserts";
 import Drinks from "./pages/Drinks.js";
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import Topbar from "./components/Topbar";
-
+import Login from "./pages/Login";
 
 
 const httpLink = createHttpLink({
@@ -61,22 +61,22 @@ const theme = createTheme (theme => ({
   },
 }));
 
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
+// function setToken(userToken) {
+//   sessionStorage.setItem('token', JSON.stringify(userToken));
+// }
 
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
+// function getToken() {
+//   const tokenString = sessionStorage.getItem('token');
+//   const userToken = JSON.parse(tokenString);
+//   return userToken?.token
+// }
 
-function App() {
-  const { token, setToken } = useToken();
+// function App() {
+//   const { token, setToken } = useToken();
 
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+//   if(!token) {
+//     return <Login setToken={setToken} />
+//   }
 
 
   return (
@@ -107,7 +107,7 @@ function App() {
         </ApolloProvider>
     </ThemeProvider>
   );
-}
+
 export default App;
 
 
