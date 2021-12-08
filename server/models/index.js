@@ -1,3 +1,5 @@
 const User = require('./User')
-
-module.export = { User };
+const Order = require('./Order')
+const Item = require('./Items')
+console.log(User,Order,Item);
+module.exports = { User, Order, Item };

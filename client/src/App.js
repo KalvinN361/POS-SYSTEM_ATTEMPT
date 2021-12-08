@@ -10,9 +10,8 @@
 // import Drinks from "./pages/Drinks.js";
 // // import Auth from './utils/auth'
 import { setContext } from '@apollo/client/link/context';
-//import React from 'react';
-//import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Router, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from "@apollo/client";
 import Navtabs from "./components/Navtabs";
 import Entrees from "./pages/Entrees";
@@ -20,9 +19,8 @@ import Entrees from "./pages/Entrees";
 import Desserts from "./pages/Desserts";
 import Drinks from "./pages/Drinks.js";
 import {ThemeProvider, createTheme} from '@mui/material/styles'
-import React, { useState } from 'react';
-import Login from './pages/Login';
-import useToken from './components/Login/useToken';
+import Topbar from "./components/Topbar";
+
 
 
 const httpLink = createHttpLink({
@@ -84,9 +82,12 @@ function App() {
   return (
     <ThemeProvider theme = {theme}>
         <ApolloProvider client={client}>
+        <Topbar />
+        <Router>
+          <div> 
           <Navtabs />
-          <Router>
-            <div> 
+            <div className="flex-column justify-center align-center min-100-vh bg-primary">
+              <Switch> 
               <Route exact path = '/'>
                 <Login/>
               </Route>
@@ -99,10 +100,8 @@ function App() {
               <Route exact path = '/Desserts'>
                 <Desserts/>
               </Route>
-              {/* <Route exact path = '/Sides'>
-                <Sides/>
-              </Route> */}
-          <Navtabs/>
+              </Switch>
+          </div>
           </div>
           </Router> 
         </ApolloProvider>
