@@ -16,7 +16,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from "@ap
 import Login from "./pages/Login";
 import Navtabs from "./components/Navtabs";
 import Entrees from "./pages/Entrees";
-import Sides from "./pages/Sides";
+// import Sides from "./pages/Sides";
 import Desserts from "./pages/Desserts";
 import Drinks from "./pages/Drinks.js";
 import {ThemeProvider, createTheme} from '@mui/material/styles'
@@ -62,9 +62,10 @@ const theme = createTheme (theme => ({
 
 function App() {
   return (
-    <ThemePrivider theme = {theme}>
+    <ThemeProvider theme = {theme}>
         <ApolloProvider client={client}>
-          <router>
+          <Navtabs />
+          <Router>
             <div> 
               <Route exact path = '/'>
                 <Login/>
@@ -78,13 +79,14 @@ function App() {
               <Route exact path = '/Desserts'>
                 <Desserts/>
               </Route>
-              <Route exact path = '/Sides'>
+              {/* <Route exact path = '/Sides'>
                 <Sides/>
-              </Route>
-            </div>
-            </router> 
+              </Route> */}
+          <Navtabs/>
+          </div>
+          </Router> 
         </ApolloProvider>
-    </ThemePrivider>
+    </ThemeProvider>
   );
 }
 export default App;
