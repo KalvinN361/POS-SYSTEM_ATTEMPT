@@ -41,7 +41,7 @@ export default function menuItem() {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6} md={4}>
-        <Card m={2} p={2} xl={{ Width: 200 }}>
+        <Card m={2} p={2} xl={{ Width: 300 }}>
           <CardContent>
             <Box display="flex" justifyContent="space-around">
               <Img alt="thai tea" src={ThaiTea} />
@@ -57,7 +57,7 @@ export default function menuItem() {
       </Grid>
 
       <Grid item xs={12} sm={6} md={4}>
-        <Card xl={{ Width: 300 }}>
+      <Card m={2} p={2} xl={{ Width: 300 }}>
           <CardContent>
             <Box display="flex" justifyContent="space-around">
               <Img alt="Vietnamese Coffee" src={VietnameseCoffee} />
@@ -75,10 +75,11 @@ export default function menuItem() {
           </CardActions>
         </Card>
       </Grid>
+
       <Grid item xs={12} sm={6} md={4}>
-        <Card xl={{ Width: 300 }}>
+      <Card m={2} p={2} xl={{ Width: 300 }}>
           <CardContent>
-            <Box display="flex" justifyContent="space-between">
+            <Box display="flex" justifyContent="space-around">
               <Img alt="Boba Milk Tea" src={BobaMilkTea} />
             </Box>
           </CardContent>
@@ -90,8 +91,9 @@ export default function menuItem() {
           </CardActions>
         </Card>
       </Grid>
+      
       <Grid item xs={12} sm={6} md={4}>
-        <Card xl={{ Width: 300 }}>
+      <Card m={2} p={2} xl={{ Width: 300 }}>
           <CardContent>
             <Box display="flex" justifyContent="space-around">
               <Img alt="Agua Fresca" src={AguaFresca} />
