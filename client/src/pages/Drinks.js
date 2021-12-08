@@ -15,9 +15,9 @@ import AguaFresca from "../images/aguafresca.jpg";
 const Img = styled("img")({
   display: "block",
   maxWidth: "200px",
-  maxHeight: "",
+  minHeight: "250px",
+  objectFit: "cover",
 });
-
 const menu = [
   {
     name: "Thai Tea",
@@ -48,7 +48,7 @@ export default function menuItem() {
             </Box>
           </CardContent>
           <CardActions>
-            <Button sx={{ mr: 7 }} variant="contained" size="small">
+            <Button sx={{ mr: 3 }} variant="contained" size="small">
               Add {menu[0].name} to order
             </Button>
             <Typography>Price:${menu[0].price}</Typography>
@@ -65,7 +65,7 @@ export default function menuItem() {
           </CardContent>
           <CardActions>
           <Box display="flex" justifyContent="space-around">
-          <Button sx={{ mr: 7 }} variant="contained" size="small">
+          <Button sx={{ mr: 3 }} variant="contained" size="small">
               Add {menu[1].name} to order
             </Button>
             <Typography>
@@ -83,7 +83,7 @@ export default function menuItem() {
             </Box>
           </CardContent>
           <CardActions>
-            <Button sx={{ mr: 7 }} variant="contained" size="small">
+            <Button sx={{ mr: 3 }} variant="contained" size="small">
               Add {menu[2].name} to order
             </Button>
             <Typography>Price:${menu[2].price}</Typography>
@@ -99,7 +99,7 @@ export default function menuItem() {
           </CardContent>
           <CardActions>
           <Box display="flex" justifyContent="space-around">
-          <Button sx={{ mr: 7 }} variant="contained" size="small">
+          <Button sx={{ mr: 3 }} variant="contained" size="small">
               Add {menu[3].name} to order
             </Button>
             <Typography>
