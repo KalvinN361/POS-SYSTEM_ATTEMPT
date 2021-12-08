@@ -31,7 +31,7 @@ export default function menuItem() {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6} md={4}>
-        <Card m={2} p={2} xl={{ Width: 200 }}>
+        <Card m={2} p={2} xl={{ Width: 300 }}>
           <CardContent>
             <Box display="flex" justifyContent="space-around">
               <Img alt="Strawberry Cake" src={cake} />
@@ -47,7 +47,7 @@ export default function menuItem() {
       </Grid>
 
       <Grid item xs={12} sm={6} md={4}>
-        <Card xl={{ Width: 300 }}>
+      <Card m={2} p={2} xl={{ Width: 300 }}>
           <CardContent>
             <Box display="flex" justifyContent="space-around">
               <Img alt="churro" src={Churros} />
