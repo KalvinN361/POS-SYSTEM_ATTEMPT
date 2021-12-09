@@ -1,6 +1,9 @@
 const {
-    Items, Orders, Users
+    Item, Order, User
 } = require("../models");
+const {
+    AuthenticationError
+} = require('apollo-server-express');
 
 const mongoose = require('mongoose')
 
@@ -16,16 +19,16 @@ const {
 const resolvers = {
     Query: {
         users: async () => {
-            return await Users.find({})
+            return await User.find({})
         },
         orders: async () => {
-            return await Orders.find({})
+            return await Order.find({})
         },
         items: async () => {
-            return await Items.find({})
+            return await Item.find({})
         },
         user: async (parent, args, context) => {
-            const user = await Users.findOne(args.userId).populate('order')
+            const user = await User.findOne(args.userId).populate('order')
 
             if (!user) {
                 throw new AuthentificationError('Please log in with a valid user')
@@ -33,7 +36,7 @@ const resolvers = {
             return user;
         },
         order: async (parent, args, context) => {
-            const order = await Orders.findOne(args.orderId)
+            const order = await Order.findOne(args.orderId)
 
             if (!order) {
                 throw new AuthentificationError('Please use a valid order')
@@ -41,7 +44,7 @@ const resolvers = {
             return order;
         },
         item: async (parent, args, context) => {
-            const item = await Items.findOne(args.itemId).populate('category').populate('photo')
+            const item = await Item.findOne(args.itemId).populate('category').populate('photo')
 
             if (!item) {
                 throw new AuthentificationError('Please use a valid item')
@@ -66,16 +69,18 @@ const resolvers = {
             }
 
             const correctPw = await user.isCorrectPassword(password);
-
+            console.log(password)
             if (!correctPw) {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
             const token = signToken(user);
-
+            console.log(token)
             return { token, user };
         }
     }
 
 
 }
+
+module.exports = resolvers

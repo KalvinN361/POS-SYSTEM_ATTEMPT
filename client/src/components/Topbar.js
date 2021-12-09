@@ -13,7 +13,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Button from "@mui/material/Button";
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import Auth from "../utils/auth"
 const drawerWidth = 325;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -98,7 +98,9 @@ export default function PersistentDrawerLeft() {
           <Typography variant="h6" noWrap component="div">
             PhoTaco
           </Typography>
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="secondary"
+          onClick={Auth.logout}
+          >
             Logout
           </Button>
         </Toolbar>
