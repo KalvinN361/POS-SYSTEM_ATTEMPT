@@ -127,11 +127,11 @@ export default function PersistentDrawerLeft() {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <DrawerContent sx={{ justifyContent: "space-between" }}>
-    <Typography><IconButton aria-label="delete" size="small">
+        <DrawerContent id="orderList" sx={{ justifyContent: "space-between" }}>
+    <Typography id="foodList"><IconButton aria-label="delete" size="small">
   <DeleteIcon fontSize="inherit" />
-</IconButton>Food list</Typography>
-    <Typography>Price</Typography>
+</IconButton></Typography>
+    <Typography id="foodPrice">$</Typography>
     </DrawerContent>
     <Divider />
     <DrawerContent sx={{ justifyContent: "space-between" }}>

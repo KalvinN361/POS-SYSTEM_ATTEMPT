@@ -27,7 +27,29 @@ const menu = [
   },
 ];
 
+
+
 export default function menuItem() {
+  function addToTotal(){
+
+    document.getElementById("btn1").addEventListener("click", function () {
+      console.log("Added Strawberry Cake");
+      document.getElementById("foodList").innerHTML +=
+        "<Typography>Strawberry Cake</Typography>";
+      document.getElementById("foodPrice").innerHTML +=
+        "<Typography>6.99</Typography>";
+        
+    });
+
+    document.getElementById("btn2").addEventListener("click", function () {
+      console.log("Added Churros");
+      document.getElementById("foodList").innerHTML +=
+        "<Typography>Churros</Typography>";
+      document.getElementById("foodPrice").innerHTML +=
+        "<Typography>5.99</Typography>";
+    });
+  }
+
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6} md={4}>
@@ -38,7 +60,7 @@ export default function menuItem() {
             </Box>
           </CardContent>
           <CardActions>
-            <Button sx={{ mr: 3 }} variant="contained" size="small">
+            <Button id="btn1" sx={{ mr: 3 }} variant="contained" size="small" onClick= {addToTotal}>
               Add {menu[0].name} to order
             </Button>
             <Typography>Price:${menu[0].price}</Typography>
@@ -55,7 +77,7 @@ export default function menuItem() {
           </CardContent>
           <CardActions>
           <Box display="flex" justifyContent="space-around">
-          <Button sx={{ mr: 3 }} variant="contained" size="small">
+          <Button id="btn2" sx={{ mr: 3 }} variant="contained" size="small" onClick= {addToTotal}>
               Add {menu[1].name} to order
             </Button>
             <Typography>
