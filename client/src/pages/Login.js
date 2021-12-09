@@ -4,14 +4,15 @@ import Auth from "../utils/auth";
 import "./Login.css";
 import { useMutation } from '@apollo/client'
 import { LOGIN_USER } from "../utils/mutations";
-import { Link } from 'react-router-dom'
-
+import { useHistory} from 'react-router-dom'
+ 
 // const displayName = localStorage.getItem("username");
 
 
 export default function LOGIN(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
+  const history = useHistory()
   console.log(login, { error });
   console.log('create data');
 
@@ -29,7 +30,7 @@ export default function LOGIN(props) {
       console.log(token);
       Auth.login(token);
       
-
+      history.push("/Entrees")
     } catch (e) {
       console.log(e);
     }
@@ -65,7 +66,8 @@ export default function LOGIN(props) {
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 > 
-                 <Link to={`/Entrees`}>Submit</Link>
+                Submit
+
                 </button>
               </form>
   )};
