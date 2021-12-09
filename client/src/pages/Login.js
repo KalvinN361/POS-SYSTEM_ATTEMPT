@@ -15,12 +15,14 @@ export default function LOGIN(props) {
   const history = useHistory()
   console.log(login, { error });
   console.log('create data');
+  
 
   const handleFormSubmit = async (event) => {
     console.log('default??')
     event.preventDefault();
     console.log('submit')
     try {
+      console.log(formState)
       const mutationResponse = await login({
         variables: { ...formState },
       });
