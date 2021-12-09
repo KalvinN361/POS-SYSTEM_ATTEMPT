@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import Auth from "../utils/auth";
 // import LoginComp from "../components/Login";
 import "./Login.css";
-import { useMutation } from '@apollo/client'
+import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-import { useHistory} from 'react-router-dom'
- 
-// const displayName = localStorage.getItem("username");
+import { useHistory } from "react-router-dom";
+import logo from "../images/pho.jpg";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import FormControl from '@mui/material/FormControl';
+import TextField from '@mui/material/TextField';
+import { styled } from "@mui/material/styles";
 
 
 export default function LOGIN(props) {
@@ -45,34 +50,60 @@ export default function LOGIN(props) {
       [name]: value,
     });
   };
-  return (
-    <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-info"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                > 
-                Submit
 
-                </button>
-              </form>
-  )};
+  const Img = styled("img")({
+    display: "block",
+    maxWidth: "200px",
+  });
+
+  return (
+
+<Box
+      sx={{
+        marginTop: 3,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >  
+      <Img alt="logo" src={logo} />
+      <Typography component="h1" variant="h5">
+        Please sign in
+      </Typography>
+      <Box  noValidate sx={{ mt: 1 }}>
+        <FormControl component="form" onSubmit={handleFormSubmit}>
+        <TextField
+          className="form=input"
+          fullWidth
+          label="Email Address"
+          name="email"
+          value={formState.email}
+          onChange={handleChange}
+        />
+        <TextField
+          className="form-input"
+          margin="normal"
+          fullWidth
+          name="password"
+          label="Password"
+          type="password"
+          value={formState.password}
+          onChange={handleChange}
+        />
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ mb: 2, cursor:'pointer' }}
+        >
+          Sign In
+        </Button>
+        </FormControl>
+      </Box>
+    </Box>
+
+  );
+}
 
 
 
