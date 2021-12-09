@@ -5,9 +5,9 @@ const itemSchema = new Schema ({
         type: String, 
         required: true, 
     },
-    itemId: {
+    item: {
         type: String, 
-        required: true, 
+        // required: true, 
     },
     category: {
         type: String, 
@@ -28,4 +28,3 @@ const itemSchema = new Schema ({
 const item = model('Item', itemSchema);
 module.exports = item; 
 
- 
