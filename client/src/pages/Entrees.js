@@ -16,7 +16,7 @@ import { Typography } from "@mui/material";
 import phoTaco from "../images/photaco.jpg"
 import whataTaco from "../images/whatataco.jpg"
 import oxtailPho from '../images/oxtailPho.jpg'
-import phoThai from "../images/phoThai.png"
+import phoThai from "../images/phoThai.jpg"
 import bunBo from '../images/pho2.jpg'
 import "../components/Styles/Entrees.css"
 
