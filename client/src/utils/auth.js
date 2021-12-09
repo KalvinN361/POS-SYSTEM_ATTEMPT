@@ -4,7 +4,7 @@ class AuthService {
     login(tokenId) {
         localStorage.setItem('id_token', tokenId);
         
-        window.location.assign('/');
+        window.location.assign('/Entrees');
     }
     logout() {
         localStorage.removeItem('id_token');
